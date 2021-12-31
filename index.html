@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			font-family: basic-sans, sans-serif;
+			min-height: 100vh;
+			min-width: 320px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.125rem;
+			line-height: 1.6;
+			color: #333;
+			background: #000;
+			padding: 2rem;
+		}
+		.hero {
+			display: grid;
+			grid-gap: 2em;
+			align-items: center;
+		}
+		@media (min-width: 992px) {
+			.hero {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+		.hero-title {
+			margin: 0 0 .5rem;
+			text-transform: uppercase;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+
+	<script>
+		document.createElement( "picture" );
+	</script>
+	<script src="https://cdn.jsdelivr.net/gh/scottjehl/picturefill@3.0.2/dist/picturefill.js" async></script>
+</head>
+<body>
+	<div class="hero">
+		<div class="hero-title">
+			<h1>The picture element is really awesome</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reprehenderit illum deleniti reiciendis cumque facere expedita nisi laudantium voluptatibus tempora dicta, at hic praesentium quas dolorem excepturi cum saepe mollitia.</p>
+		</div>
+		<div class="hero-picture">
+			<picture>
+				<source media="(min-width: 992px)" 
+								srcset="illustration_1920x850.jpeg">
+								
+				<source media="(min-width: 768px)" 
+								srcset="illustration_960x425.jpg">
+
+				<source srcset="illustration_480x213.jpg illustration_480x213@2x.jpg">
+
+				<img src="illustration_1920x850.jpeg" alt="">
+			</picture>
+		</div>
+	</div>
+</body>
+</html>
